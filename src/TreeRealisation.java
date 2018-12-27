@@ -183,42 +183,6 @@ class Tree <T extends Comparable<T>>{
             rootLeftRight(n.rightC);
         }
     }
-
-    /**public void showTree() {
-     Stack st = new Stack();
-     st.push(root);
-     boolean isREmpty = false;
-     int tabs = 32;
-     System.out.println("\n________________________________");
-     while (!isREmpty) {
-     Stack st1 = new Stack();
-     isREmpty = true;
-     for (int i = 0; i < tabs; i++)
-     System.out.print(' ');
-     while (!st.isEmpty()) {
-     Node temp = (Node) st.pop();
-     if (temp != null) {
-     System.out.print(temp.key);
-     st1.push(temp.leftC);
-     st1.push(temp.rightC);
-     if (temp.leftC != null || temp.rightC != null)
-     isREmpty = false;
-     }
-     else {
-     System.out.print("(==)");
-     st1.push(null);
-     //st1.push(null);
-     }
-     for (int i = 0; i < tabs * 2 - 2; i++)
-     System.out.print(' ');
-     System.out.println();
-     tabs /= 2;
-     while (!st1.isEmpty())
-     st.push(st1.pop());
-     }
-     }
-     System.out.println("\n________________________________");
-     }**/
 }
 
 public class TreeRealisation {
