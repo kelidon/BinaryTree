@@ -1,37 +1,6 @@
 import java.io.*;
 import java.util.*;
 
-class Car implements Comparable<Car>{
-    private int number;
-    private String owner;
-
-    public Car() {
-        owner = null;
-        number = -1;
-    }
-
-    public Car(int num, String own) {
-        owner = own;
-        number = num;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public String gerOwner() {
-        return owner;
-    }
-    public int compareTo(Car a){
-        return owner.compareTo(a.owner);
-    }
-    public String toString(){
-        return owner+"\t"+number;
-    }
-}
-
-
-
 class Tree <T extends Comparable<T>>{
     public class Node {
         public T key;
@@ -184,56 +153,3 @@ class Tree <T extends Comparable<T>>{
         }
     }
 }
-
-public class TreeRealisation {
-    public static void main(String[] args) {
-
-        Tree<Double> aTree = new Tree<>();
-        aTree.insert(3.14);
-        aTree.insert(43.5);
-        aTree.insert(100.0);
-        aTree.insert( -16.0);
-        aTree.insert(-22.0);
-        aTree.insert( 0.1);
-        aTree.insert( 5.183);
-
-        aTree.insert(0.0);
-
-        //aTree.showTree();
-        try {
-            aTree.find(-16.1).showNode();
-        } catch (NullPointerException e) {
-            System.out.println("no such element");
-        }
-
-        Tree<Car> carTree = new Tree<>();
-        Car citr = new Car(1985, "Jane");
-        Car audi = new Car(5009, "Statham");
-        Car tesla = new Car(2243, "Musk");
-        Car ford = new Car(9120, "H.Ford");
-
-        carTree.insert(citr);
-        carTree.insert(audi);
-        carTree.insert(tesla);
-        carTree.insert(ford);
-
-        System.out.println("\nleft, root, right:");
-        aTree.leftRootRight(aTree.returnRoot());
-        System.out.println("\nroot, left, right:");
-        aTree.rootLeftRight(aTree.returnRoot());
-        System.out.println("\nleft, right, root:");
-        aTree.leftRightRoot(aTree.returnRoot());
-        System.out.println();
-
-        System.out.println("\nleft, root, right:");
-        carTree.leftRootRight(carTree.returnRoot());
-        System.out.println("\nroot, left, right:");
-        carTree.rootLeftRight(carTree.returnRoot());
-        System.out.println("\nleft, right, root:");
-        carTree.leftRightRoot(carTree.returnRoot());
-        System.out.println();
-
-
-    }
-}
-
